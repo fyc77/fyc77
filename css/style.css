@@ -1,0 +1,688 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* 导航栏样式 */
+header {
+    background-color: #2c786c;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 50px;
+    border-radius: 5px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 轮播图样式 */
+.carousel {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.carousel-container {
+    position: relative;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-content {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.carousel-content h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.carousel-content p {
+    font-size: 18px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-btn.prev {
+    left: 20px;
+}
+
+.carousel-btn.next {
+    right: 20px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: white;
+}
+
+/* 主要内容样式 */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 页面头部 */
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+    border-bottom: 2px solid #2c786c;
+}
+
+.page-header h1 {
+    font-size: 32px;
+    color: #2c786c;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* 特色景点 */
+.featured {
+    margin: 40px 0;
+}
+
+.featured h2 {
+    font-size: 28px;
+    color: #2c786c;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.featured-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.featured-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.featured-item h3 {
+    font-size: 20px;
+    color: #2c786c;
+    margin: 15px;
+}
+
+.featured-item p {
+    margin: 0 15px 15px;
+    color: #666;
+}
+
+/* 美食文化 */
+.food-culture {
+    margin: 40px 0;
+}
+
+.food-culture-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.food-section,
+.culture-section {
+    flex: 1;
+}
+
+.food-section h2,
+.culture-section h2 {
+    font-size: 24px;
+    color: #2c786c;
+    margin-bottom: 15px;
+}
+
+.food-section img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.food-section p,
+.culture-section p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #2c786c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1e5a50;
+}
+
+/* 旅游攻略 */
+.travel-guide {
+    margin: 40px 0;
+    text-align: center;
+    background-color: #e8f4f1;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.travel-guide h2 {
+    font-size: 28px;
+    color: #2c786c;
+    margin-bottom: 20px;
+}
+
+.travel-guide p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* 视频介绍 */
+.video-intro {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.video-intro h2 {
+    font-size: 28px;
+    color: #2c786c;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+}
+
+/* 景点页面样式 */
+.scenic-list {
+    margin: 40px 0;
+}
+
+.scenic-item {
+    display: flex;
+    gap: 30px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.scenic-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.scenic-item img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.scenic-info {
+    flex: 1;
+}
+
+.scenic-info h2 {
+    font-size: 24px;
+    color: #2c786c;
+    margin-bottom: 15px;
+}
+
+.scenic-info p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+/* 美食页面样式 */
+.food-list {
+    margin: 40px 0;
+}
+
+.food-item {
+    display: flex;
+    gap: 30px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.food-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.food-item img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.food-info {
+    flex: 1;
+}
+
+.food-info h2 {
+    font-size: 24px;
+    color: #2c786c;
+    margin-bottom: 15px;
+}
+
+.food-info p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+/* 文化页面样式 */
+.culture-list {
+    margin: 40px 0;
+}
+
+.culture-item {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.culture-item h2 {
+    font-size: 24px;
+    color: #2c786c;
+    margin-bottom: 15px;
+}
+
+.culture-item p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+/* 攻略页面样式 */
+.guide-content {
+    margin: 40px 0;
+}
+
+.guide-item {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.guide-item h2 {
+    font-size: 24px;
+    color: #2c786c;
+    margin-bottom: 15px;
+}
+
+.guide-item p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.guide-item ul {
+    margin-left: 20px;
+    color: #666;
+}
+
+.guide-item li {
+    margin-bottom: 8px;
+}
+
+/* 关于页面样式 */
+.about-content {
+    margin: 40px 0;
+}
+
+.about-item {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.about-item h2 {
+    font-size: 24px;
+    color: #2c786c;
+    margin-bottom: 15px;
+}
+
+.about-item p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.about-item ul {
+    margin-left: 20px;
+    color: #666;
+}
+
+.about-item li {
+    margin-bottom: 8px;
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #2c786c;
+    color: white;
+    padding: 40px 0;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-info h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+}
+
+.footer-links h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #e8f4f1;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+}
+
+/* 回到顶部按钮 */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #2c786c;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: #1e5a50;
+    transform: translateY(-5px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links li {
+        margin: 5px;
+    }
+
+    .carousel {
+        height: 300px;
+    }
+
+    .carousel-content {
+        bottom: 20px;
+        left: 20px;
+        padding: 10px;
+    }
+
+    .carousel-content h2 {
+        font-size: 24px;
+    }
+
+    .carousel-content p {
+        font-size: 14px;
+    }
+
+    .food-culture-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .scenic-item,
+    .food-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .scenic-item img,
+    .food-item img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        height: 200px;
+    }
+
+    .carousel-content h2 {
+        font-size: 18px;
+    }
+
+    .carousel-content p {
+        font-size: 12px;
+    }
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .food-culture-content {
+        padding: 20px;
+    }
+
+    .scenic-item,
+    .food-item {
+        padding: 20px;
+    }
+
+    .guide-item,
+    .culture-item,
+    .about-item {
+        padding: 20px;
+    }
+}
